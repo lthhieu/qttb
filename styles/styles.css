@@ -1,0 +1,43 @@
+/* render bài đăng */
+.item-post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+.item-post > div> h2{
+  color: #4b4848;
+  margin: 0;
+}
+.item-post > div:hover > h2 {
+  color: rgb(51, 92, 228);
+}
+.item-post > div:hover {
+    color: rgb(51, 92, 228);
+    cursor: pointer;
+}
+img.thumbnail-post {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+/* form add post */
+.form-add-post {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    gap: 10px;
+}
+.form-add-post>h2 {
+    text-align: center;
+    color: #333;
+}
