@@ -1,16 +1,9 @@
 <?php
-
-class PostModel{
+require_once('models/DBModel.php');
+class PostModel extends DBModel{
     public function getPost(){
-        // echo 'Get post in model';
-        $mysqli = new mysqli("localhost","root","","qttb");
-
-        // Check connection
-        if ($mysqli -> connect_errno) {
-            echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-            exit();
-        }
-
+        $mysqli=$this->connect();
+        
         $sql = "SELECT * FROM posts";
         $result = $mysqli->query($sql);
 
@@ -26,13 +19,7 @@ class PostModel{
     }
 
     public function addPost($title, $content, $thumbnail, $createAt){
-        $mysqli = new mysqli("localhost","root","","qttb");
-
-        // Check connection
-        if ($mysqli -> connect_errno) {
-            echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-            exit();
-        }
+        $mysqli=$this->connect();
 
         $sql = "INSERT INTO posts(title, content, thumbnail, createAt) VALUES('$title', '$content', '$thumbnail', '$createAt')";
 
