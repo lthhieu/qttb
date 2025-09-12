@@ -24,13 +24,6 @@ class PostController{
         $thumbnail = $_POST['thumbnail'];
         $createAt = $_POST['createAt'];
 
-        // $data = array(
-        //     'title' => $title,
-        //     'content' => $content,
-        //     'thumbnail' => $thumbnail,
-        //     'createAt' => $createAt
-        // );
-
         require_once('models/posts.php');
         $postModel = new PostModel();
         $result = $postModel->addPost($title, $content, $thumbnail, $createAt);

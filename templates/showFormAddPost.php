@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
-    <form class="form-add-post" action="?action=adding" method="post">
+    <form class="form-add-post" action="/qttb/adding" method="post">
         <h2>Thêm tin mới</h2>
         <span>Tiêu đề:</span>
         <input type="text" name="title" />

@@ -1,3 +1,30 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif; /* font chữ */
+}
+header {
+    flex: 0 0 20%;
+    text-align: center;
+}
+
+main {
+    flex: 1 1;
+    padding: 0 10%;
+}
+
+footer {
+    flex: 0 0 10%;
+    background: #ccc;
+    text-align: center;
+    padding: 20px 0;
+}
 /* render bài đăng */
 .item-post {
     display: flex;
@@ -41,3 +68,109 @@ img.thumbnail-post {
     text-align: center;
     color: #333;
 }
+/* header */
+.dropdown {
+    display: inline-block;
+    position: relative;
+    margin-left: 5px; /* thêm khoảng cách nhỏ nếu cần */
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0; /* Sửa lại thành 0 để menu sát phải */
+    top: 100%; /* Menu xổ xuống dưới */
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 120px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:active .dropdown-menu {
+    display: block;
+}
+
+/* ẩn navigate trên desktop */
+.hamburger-menu, .mobile-nav {
+    display: none;
+}
+
+/* navigate trên mobile */
+@media screen and (max-width: 768px) {
+    header {
+        flex: 0 0 10%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10%;
+        align-items: center;
+        background-color: goldenrod;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #fff;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        transition: left 0.3s ease;
+        padding-top: 60px;
+        z-index: 1000;
+    }
+
+    .mobile-nav.open {
+        left: 0;
+    }
+
+    .mobile-nav a {
+        padding: 15px 20px;
+        border-bottom: 1px solid #ddd;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .mobile-nav a:hover {
+        background-color: #f0f0f0;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 2em;
+        cursor: pointer;
+        color: #555;
+    }
+}
+
+
