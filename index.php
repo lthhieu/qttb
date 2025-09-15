@@ -6,6 +6,8 @@ require_once('controllers/users.php');
 $postController = new PostController();
 $authController = new AuthController();
 $userController = new UserController();
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/bootstrap.php';
 
 // Include routes
 $routes = include('routes.php');
